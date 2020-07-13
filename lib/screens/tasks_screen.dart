@@ -47,7 +47,7 @@ class _TasksScreenState extends State<TasksScreen> {
                 ),
                 Text(
                   //TODO: Make Dynamic
-                  '12 Tasks',
+                  '${tasks.length} Tasks',
                   style: TextStyle(fontSize: 18, color: Colors.black87),
                 ),
               ],
@@ -75,10 +75,17 @@ class _TasksScreenState extends State<TasksScreen> {
             isScrollControlled: true,
             builder: (BuildContext context) => SingleChildScrollView(
               child: Container(
-                  padding: EdgeInsets.only(
-                    bottom: MediaQuery.of(context).viewInsets.bottom,
-                  ),
-                  child: AddTaskScreen()),
+                padding: EdgeInsets.only(
+                  bottom: MediaQuery.of(context).viewInsets.bottom,
+                ),
+                child: AddTaskScreen((newTaskTitle) {
+                  setState(() {
+                    Task newTask = Task(name: newTaskTitle);
+                    tasks.add(newTask);
+                  });
+                  Navigator.pop(context);
+                }),
+              ),
             ),
           );
         },
