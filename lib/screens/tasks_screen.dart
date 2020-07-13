@@ -1,8 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutlist/models/task.dart';
 import 'package:flutlist/screens/add_task_screen.dart';
 import 'package:flutlist/widgets/task_list.dart';
 
-class TasksScreen extends StatelessWidget {
+class TasksScreen extends StatefulWidget {
+  @override
+  _TasksScreenState createState() => _TasksScreenState();
+}
+
+class _TasksScreenState extends State<TasksScreen> {
+  List<Task> tasks = [
+    Task(name: 'Buy eggs'),
+    Task(name: 'Buy proteins'),
+    Task(name: 'Feed the dogs'),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,6 +46,7 @@ class TasksScreen extends StatelessWidget {
                   ),
                 ),
                 Text(
+                  //TODO: Make Dynamic
                   '12 Tasks',
                   style: TextStyle(fontSize: 18, color: Colors.black87),
                 ),
@@ -45,7 +58,7 @@ class TasksScreen extends StatelessWidget {
             child: Container(
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20),
-                child: TaskList(),
+                child: TaskList(tasks),
               ),
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -57,7 +70,17 @@ class TasksScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          showModalBottomSheet(context: context, builder: (BuildContext context) => AddTaskScreen());
+          showModalBottomSheet(
+            context: context,
+            isScrollControlled: true,
+            builder: (BuildContext context) => SingleChildScrollView(
+              child: Container(
+                  padding: EdgeInsets.only(
+                    bottom: MediaQuery.of(context).viewInsets.bottom,
+                  ),
+                  child: AddTaskScreen()),
+            ),
+          );
         },
         backgroundColor: Colors.tealAccent,
         child: Icon(
