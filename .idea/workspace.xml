@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6214e856-b53e-4784-aadc-e86929d692e7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/models/tasks_list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/add_task_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/add_task_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/tasks_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/tasks_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/task_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/task_list.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/task_tile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/task_tile.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/task_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/task_list_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +66,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

@@ -1,19 +1,15 @@
+import 'package:flutlist/models/tasks_list.dart';
 import 'package:flutter/material.dart';
-import 'package:flutlist/models/task.dart';
 import 'package:flutlist/screens/add_task_screen.dart';
-import 'package:flutlist/widgets/task_list.dart';
+import 'package:flutlist/widgets/task_list_view.dart';
+import 'package:provider/provider.dart';
 
-class TasksScreen extends StatefulWidget {
-  @override
-  _TasksScreenState createState() => _TasksScreenState();
-}
-
-class _TasksScreenState extends State<TasksScreen> {
-  List<Task> tasks = [
-    Task(name: 'Buy eggs'),
-    Task(name: 'Buy proteins'),
-    Task(name: 'Feed the dogs'),
-  ];
+class TasksScreen extends StatelessWidget {
+//  List<Task> newTasks = [
+//    Task(name: 'Buy eggs'),
+//    Task(name: 'Buy proteins'),
+//    Task(name: 'Feed the dogs'),
+//  ];
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +43,7 @@ class _TasksScreenState extends State<TasksScreen> {
                 ),
                 Text(
                   //TODO: Make Dynamic
-                  '${tasks.length} Tasks',
+                  '${Provider.of<TasksList>(context).taskCount} Tasks',
                   style: TextStyle(fontSize: 18, color: Colors.black87),
                 ),
               ],
@@ -58,7 +54,7 @@ class _TasksScreenState extends State<TasksScreen> {
             child: Container(
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20),
-                child: TaskList(tasks),
+                child: TaskListView(),
               ),
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -78,13 +74,7 @@ class _TasksScreenState extends State<TasksScreen> {
                 padding: EdgeInsets.only(
                   bottom: MediaQuery.of(context).viewInsets.bottom,
                 ),
-                child: AddTaskScreen((newTaskTitle) {
-                  setState(() {
-                    Task newTask = Task(name: newTaskTitle);
-                    tasks.add(newTask);
-                  });
-                  Navigator.pop(context);
-                }),
+                child: AddTaskScreen(),
               ),
             ),
           );
