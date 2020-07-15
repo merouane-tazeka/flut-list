@@ -23,6 +23,11 @@ class TasksList extends ChangeNotifier {
     notifyListeners();
   }
 
+  void removeTask(Task task) {
+    _tasksList.remove(task);
+    notifyListeners();
+  }
+
   int get taskCount {
     return _tasksList.length;
   }

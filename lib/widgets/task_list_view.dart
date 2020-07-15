@@ -12,11 +12,16 @@ class TaskListView extends StatelessWidget {
           itemCount: taskList.taskCount,
           itemBuilder: (context, index) {
             final task = taskList.tasks[index];
-            return TaskTile(
-              task: task,
-              checkboxCallback: (checkboxState) {
-                taskList.updateTask(task);
-              },
+            return GestureDetector(
+              child: TaskTile(
+                task: task,
+                checkboxCallback: (checkboxState) {
+                  taskList.updateTask(task);
+                },
+                longPressCallback: () {
+                  taskList.removeTask(task);
+                },
+              ),
             );
           },
         );
