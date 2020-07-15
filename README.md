@@ -1,16 +1,21 @@
-# flutlist
+# FlutList
 
-A new Flutter application.
+A simple To-Do List application made with [Flutter](https://flutter.dev/) Framework.
 
-## Getting Started
+## About
 
-This project is a starting point for a Flutter application.
+The app was made mainly to challenge myself working with Flutter, and I did start it specially to get used to the use of [Provider Package](https://pub.dev/packages/provider). I am currently working on a complex budgeting app which needs some optimisation (State Management), this small app helped me understand the concept and now I am implementing the Provider Package to my Budgeting app.
 
-A few resources to get you started if this is your first Flutter project:
+## Technologies
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+* Flutter Framework (Dart programming language)
+* Provider Package
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Functionality
+
+* Addind task by pressing the + bottom button
+* Removing task by hold pressing it in the list
+
+## Note
+
+The app was made in few hours during 2-3 days.
